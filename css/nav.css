@@ -1,0 +1,53 @@
+
+
+
+ /* Adjust carousel height to fit the screen */
+   
+ #carouselExampleIndicators {
+    height: calc(100vh - 59px); /* Subtract the height of the navbar (56px) */
+    overflow: hidden;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+body {
+    height: 800px;
+    width: 100%;
+        
+    }
+
+.dropdown-menu li {
+position: relative;
+}
+
+.dropdown-menu .submenu {
+display: none;
+position: absolute;
+left: 100%;
+top: 0;
+}
+.dropdown-menu>li:hover>.submenu{
+display: block;
+
+}
+
+/* Make the navbar transparent */
+.navbar {
+background-color: transparent;
+}
+
+/* Make the navbar links white and semi-transparent on hover */
+.navbar-nav .nav-link {
+color: rgb(222, 143, 143);
+}
+
+.navbar-nav .nav-link:hover {
+color: rgba(56, 204, 218, 0.7);
+}
+
+
+
+

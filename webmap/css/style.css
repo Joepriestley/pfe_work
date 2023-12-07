@@ -1,0 +1,52 @@
+#mapdiv {
+    height:100vh;
+} 
+
+.col-xs-12,.col-xs-6,.col-xs-4{
+    padding: 3px;
+} 
+
+#divProject {
+    background-color: rgb(179, 179, 43);
+}
+
+
+.leaflet-container .leaflet-control-mouseposition {
+    background-color: rgb(205 227 227 / 70%);
+    box-shadow: 0 0 5px #151515;
+    padding: 0 5px;
+    margin: 5px;
+    color: #333;
+    font: 11px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+.errorMsg{
+    
+    padding:0;
+    text-align: center;
+    background-color: red;
+}
+
+
+
+/*layer control icon*/
+
+.custom-icon {
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #007bff;
+  }
+
+ 
+  /* Custom Lightbox Styles */
+.custom-lightbox {
+    max-width: 250px; /* Set the maximum width for the lightbox */
+    margin: 0 auto; /* Center the lightbox horizontally */
+    background-color: rgb(19, 76, 28); /* Set a background color for the lightbox */
+    /* padding: 10px; Add padding inside the lightbox */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+  }
+
+
+  
+  

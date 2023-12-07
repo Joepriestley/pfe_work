@@ -21,13 +21,25 @@ jobs:
       - name: Install Composer Dependencies
         run: composer install
 
+     
       - name: Deploy Website to EC2 Instance
         run: |
+          # Create a temporary file to store the SSH private key
+          echo "${{ secrets.EC2_SSH_KEY }}" > /tmp/ec2-ssh-key.pem
+          
+          # Set permissions on the key file
+          chmod 600 /tmp/ec2-ssh-key.pem
+
           # Copy PHP files to EC2 instance
-          scp -i ${{ secrets.EC2_SSH_KEY }} -r ./ user@your-ec2-ip:/path/to/destination
+          scp -i /tmp/ec2-ssh-key.pem -r ./ ec2-user@34.227.162.97:/path/to/destination
 
           # Connect to EC2 instance and execute further commands
-          ssh -i ${{ secrets.EC2_SSH_KEY }} user@your-ec2-ip "cd /path/to/destination && composer install"
+          ssh -i /tmp/ec2-ssh-key.pem ec2-user@34.227.162.97 "cd /path/to/destination && composer install"
 
           # Reload or restart your web server (e.g., Apache)
-          ssh -i ${{ secrets.EC2_SSH_KEY }} user@your-ec2-ip "sudo service apache2 reload"
+          ssh -i /tmp/ec2-ssh-key.pem ec2-user@34.227.162.97 "sudo service apache2 reload"
+
+      - name: Remove the temporary key file
+        run: rm /tmp/ec2-ssh-key.pem
+
+# ... (other parts of your workflow)

@@ -1,0 +1,41 @@
+
+body{
+
+background: url(../img/background.jpg);
+background-attachment: fixed;
+
+}
+
+
+/* Add styles for the form */
+form {
+    border: 1px solid #0b3993;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Add styles for the form fields */
+.form-control {
+    margin-bottom: 10px;
+}
+
+/* Add styles for the table rows */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #c7edf4;
+}
+
+/* Add style for the "Nouveau" button */
+.btn-primary {
+    margin-top: 10px;
+}

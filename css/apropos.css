@@ -1,0 +1,114 @@
+
+
+body{
+    /* position:relative; 
+    
+   
+    padding-bottom: 6.75rem;
+    background: url(../img/background.jpg);
+    background-attachment: fixed; */
+
+    
+    /* min-height: 100%;
+    display: flex;
+    flex-direction: column; */
+    
+
+    background-image: linear-gradient(109.6deg, #cfd9df 0%, #e2ebf0 100%);
+}
+/* start footer */
+/* footer{
+    background:#333;
+    margin:0px;
+    padding: 9px;
+    left: 0;
+    right:0;
+    bottom: 0;
+    position:absolute;
+}
+.copy{
+    padding-top: 50px;
+
+}
+.smed a{
+    color: #fff;
+    font-size: 30px;
+    margin: 10px;
+    padding-top: 10px;
+}
+.smed a:hover{
+    color: #e42448;
+}
+.con:hover{
+    color: #e42448;
+} */
+/* end footer */
+
+h1,h4,h3,h2,h5{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+.container{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    font-size:larger;
+    font-weight: 400;
+    /* color: #eeeaea; */
+    font-size:large;
+    /* margin: auto; */
+    /* padding-top:20px; */
+    background-color: rgb(249, 242, 242);
+    /* margin-top:50px; */
+    /* padding-left: 50px; */
+    /* width: auto; */
+    /* height:auto; */
+    /* padding-right: 50px; */
+    /* margin-bottom: 150px; */
+    padding: 50px;
+   
+  } 
+p{
+    font-weight:500;
+}
+.photo {
+   
+    margin-bottom: 10px;
+    
+}
+img{
+    height:210;
+     width:250;
+}
+
+.photo > img{
+    margin-top: 10px;
+    margin-right: 25px;
+    background-color: rgb(13, 215, 198);
+    border: 7px solid rgb(228, 157, 103);
+    border-radius: 30px 15px 35px;
+}
+.image-text-wrapper{
+    display:flex ;
+    align-items: center;
+    margin-bottom: 20px;
+}
+/* .image-text {
+  line-height: 38px;
+    
+} */
+/* image in circuit ornithologie */
+.circuit{
+    height: 550px;
+    width: 100%;
+    object-fit:cover;
+}
+.echesse{
+    
+    margin-top: 5px;
+}
+/* images in reserve massa  */
+.massa{
+    height: 230px;
+    width: 230px;
+    object-fit:fill;
+}

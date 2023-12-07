@@ -1,0 +1,21 @@
+/* Custom styling for the footer */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 30px 0;
+}
+
+.footer-social {
+    margin-top: 10px;
+}
+
+.footer-social a {
+    color: #f8f9fa;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #17a2b8;
+}

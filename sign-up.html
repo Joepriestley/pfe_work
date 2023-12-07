@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <!-- Add Bootstrap 4.0.0 CSS CDN link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5 ">
+        <div class="row justify-content-center ">
+            <div class="col-md-6">
+                <div class="card bg-info">
+                    <div class="card-header bg-dangerbg-info text-white ">
+                        <h2 class="text-center">Signup</h2>
+                    </div>
+                    <div class="card-body bg-dark">
+                        <form class="" action="signup.php" style="background-color: rgb(201, 216, 214);"  method="POST">
+                            <div class="form-group">
+                                <label class=" pl-2" for="nom"> Nom:</label>
+                                <input type="text" class="form-control" id="nom" name="nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="pl-2 font-weight-700" for="prenom">Prenom:</label>
+                                <input type="text" class="form-control" id="prenom" name="prenom" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="pl-2" for="mot_de_passe">Mot de Passe:</label>
+                                <input type="text" class="form-control" id="mot_de_passe" name="mot_de_passe" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="pl-2" for="mot_de_passe_repete"> Repetez votre mot de passe:</label>
+                                <input type="text" class="form-control" id="mot_de_passe_repete" name="mot_de_passe_repete" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="pl-2" for="email"> Adresse Email:</label>
+                                <input type="text" class="form-control" id="email" name="email" required>
+                            </div>
+                           
+                            <div class="form-group">
+                                <label class="pl-2" for="role">Role:</label>
+                                <select class="form-control" id="role" name="role">
+                                    <option value="admin">Admin</option>
+                                    <option value="user">User</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Signup</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Add Bootstrap 4.0.0 JS and Popper.js CDN links (for optional JavaScript functionality) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
