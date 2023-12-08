@@ -16,7 +16,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2.0'
+          php-version: '8.2.9'
 
       - name: Install Composer Dependencies
         run: composer install
@@ -31,13 +31,13 @@ jobs:
           chmod 600 /tmp/ec2-ssh-key.pem
 
           # Copy PHP files to EC2 instance
-          scp -i /tmp/ec2-ssh-key.pem -r ./ ec2-user@34.227.162.97:/path/to/destination
+          scp -i /tmp/ec2-ssh-key.pem -r ./ ec2-user@54.167.247.203:/path/to/destination
 
           # Connect to EC2 instance and execute further commands
-          ssh -i /tmp/ec2-ssh-key.pem ec2-user@34.227.162.97 "cd /path/to/destination && composer install"
+          ssh -i /tmp/ec2-ssh-key.pem ec2-user@54.167.247.203"cd /path/to/destination && composer install"
 
           # Reload or restart your web server (e.g., Apache)
-          ssh -i /tmp/ec2-ssh-key.pem ec2-user@34.227.162.97 "sudo service apache2 reload"
+          ssh -i /tmp/ec2-ssh-key.pem ec2-user@54.167.247.203"sudo systemctl reload httpd"
 
       - name: Remove the temporary key file
         run: rm /tmp/ec2-ssh-key.pem
