@@ -1,0 +1,49 @@
+name: Deploy PHP Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2.9'
+
+      - name: Deploy to EC2
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_DIR }}
+
+
+      - name: Deploy Website to EC2 Instance
+        run: |
+          # Create a temporary file to store the SSH private key
+          echo "${{ secrets.EC2_SSH_KEY }}" > /tmp/ec2-ssh-key.pem
+          
+          # Set permissions on the key file
+          chmod 600 /tmp/ec2-ssh-key.pem
+
+          # Copy PHP files to EC2 instance
+          scp -i /tmp/ec2-ssh-key.pem -r ./ user@your-ec2-ip:/path/to/destination
+
+          # Connect to EC2 instance and execute further commands
+          ssh -i /tmp/ec2-ssh-key.pem user@your-ec2-ip "cd /path/to/destination && composer install"
+
+          # Reload or restart your web server (e.g., Apache)
+          ssh -i /tmp/ec2-ssh-key.pem user@your-ec2-ip "sudo service apache2 reload"
+
+     
+
