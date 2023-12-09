@@ -27,8 +27,7 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
 
-
-      - name: Executing remote ssh commands using ssh key
+      - name: Execute remote commands using SSH key
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST_DNS }}
@@ -39,11 +38,3 @@ jobs:
             cd pfe_work
             sudo mv * /var/www/html/pfe_work
             sudo systemctl reload httpd
-      # Additional steps if needed, e.g., database migrations, environment setup, etc.
-
-
-
-    
-
-     
-     
