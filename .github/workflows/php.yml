@@ -1,4 +1,4 @@
-name: Deploy PHP Website
+name: Deploy PHP Application
 
 on:
   push:
@@ -7,39 +7,43 @@ on:
 
 jobs:
   deploy:
+    name: Deploy to EC2
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up PHP
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2.9'
 
-      # - name: Install Composer Dependencies
-      #   run: composer install
+      - name: Deploy to EC2
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_DIR }}
+
+
+      - name: Executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_DNS }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            sudo apt-get -y update
+            cd pfe_work
+            sudo mv * /var/www/html/pfe_work
+            sudo systemctl reload httpd
+      # Additional steps if needed, e.g., database migrations, environment setup, etc.
+
+
+
+    
 
      
-      - name: Deploy Website to EC2 Instance
-        run: |
-          # Create a temporary file to store the SSH private key
-          echo "${{ secrets.EC2_SSH_KEY }}" > /tmp/ec2-ssh-key.pem
-          
-          # Set permissions on the key file
-          chmod 600 /tmp/ec2-ssh-key.pem
-
-          # Copy PHP files to EC2 instance
-          scp -i /tmp/ec2-ssh-key.pem -r ./ ec2-user@54.167.247.203:/path/to/destination
-
-          # Connect to EC2 instance and execute further commands
-          ssh -i /tmp/ec2-ssh-key.pem ec2-user@54.167.247.203"cd /path/to/destination && composer install"
-
-          # Reload or restart your web server (e.g., Apache)
-          ssh -i /tmp/ec2-ssh-key.pem ec2-user@54.167.247.203"sudo systemctl reload httpd"
-
-      - name: Remove the temporary key file
-        run: rm /tmp/ec2-ssh-key.pem
-
-# ... (other parts of your workflow)
+     

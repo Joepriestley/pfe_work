@@ -94,7 +94,7 @@ include_once 'header.php';
               <div class="form-group col-md-4">
                 <label for="photo">Photo</label>
                 <input type="file" accept="image/*" id="photo" name="photo" class="form-control-file">
-                <img src="../img/aaddaax.jpg" id="photo-preview" class="img-fluid img-thumbnail rounded mt-2" height="200" width="200" alt="Photo d'animal">
+                <img src="./img/aaddaax.jpg" id="photo-preview" class="img-fluid img-thumbnail rounded mt-2" height="200" width="200" alt="Photo d'animal">
               </div>
               <div class="input-group col-md-8">
                 <div class="input-group-prepend">
