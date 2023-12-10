@@ -71,7 +71,7 @@ function buildZoneSidebarHtml(zoneLabel, zoneName,  properties, releventCols, es
 
 
 function buildDouarSidebarHtml(attrs, releventCols) {
-  var photoUrl = `/geoportail-pnsm/forms/${attrs.photo}`
+  var photoUrl = `/pfe_work/${attrs.photo}`
     return `
     <div class="w-full h-full relative p-3 ">
     <span class="absolute top-0 text-base left-0 m-2">Douar</span>
