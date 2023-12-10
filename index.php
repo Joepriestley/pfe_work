@@ -1,3 +1,4 @@
+
 <?php
 include_once 'header.php';
 ?>
@@ -34,7 +35,7 @@ include_once 'header.php';
         <div class="carousel-item active" style="height:1000px !important;" >
           <img class="d-block w-100 height-img" height="400" src="./img/josvan.jpg"  alt="photo_addax" style="height:100% !important;">
           <div class="carousel-caption d-none d-md-block">
-            <h1>La Gazzelle Dorcas</h1>
+            <h1>La Gazelle Dorcas</h1>
             <h5>Symbole de grâce et de vivacité, habitante emblématique du Parc National de Souss Massa</h5>
           </div>
         </div>
