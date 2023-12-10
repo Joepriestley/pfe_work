@@ -11,7 +11,8 @@ var googleStreets,googleHybrid,googleSatellite,googleTerrain;
 var histChart;
 var jsnActivites;
 
-var imagesBaseUrl = "http://localhost/geoportail-pnsm/forms"
+var imagesBaseUrl = "http://ec2-54-167-247-203.compute-1.amazonaws.com/pfe_work/"
+//http://localhost/geoportail-pnsm/forms
 
 var selectedLayer = null;
 
